@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookZZ - Livres universitaires</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">📚</span>
+        <div>
+          <div class="title">BookZZ</div>
+          <div class="subtitle">Livres universitaires livrés chez vous</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#catalogue">Catalogue</a>
+        <a href="#panier">Panier</a>
+        <a href="#checkout">Commander</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Commandez vos livres universitaires en quelques clics</h1>
+          <p>
+            Spécialités : Tronc commun ST, Mécanique énergétique, Génie civil,
+            Électronique, Chimie, Biologie. Paiement à la réception, livraison à domicile
+            ou au bureau.
+          </p>
+          <a class="cta" href="#catalogue">Voir le catalogue</a>
+        </div>
+        <div class="hero-card">
+          <div class="hero-price">Livraison configurable</div>
+          <div>Ajoutez au panier, validez, nous livrons.</div>
+        </div>
+      </section>
+
+      <section id="catalogue" class="section">
+        <div class="section-header">
+          <h2>Catalogue</h2>
+          <p>Ajoutez les livres qui vous intéressent, modifiez les quantités depuis le panier.</p>
+        </div>
+        <div id="category-tabs" class="tabs"></div>
+        <div id="books-grid" class="grid"></div>
+      </section>
+
+      <section id="panier" class="section">
+        <div class="section-header">
+          <h2>Panier</h2>
+          <p>Modifiez les quantités ou retirez un livre avant de valider.</p>
+        </div>
+        <div id="cart-empty" class="empty">Votre panier est vide.</div>
+        <div id="cart-items"></div>
+        <div class="totals">
+          <div class="line">
+            <span>Sous-total</span>
+            <span id="subtotal">0 DA</span>
+          </div>
+          <div class="line">
+            <span>Livraison</span>
+            <span id="shipping">0 DA</span>
+          </div>
+          <div class="line total">
+            <span>Total</span>
+            <span id="grand-total">0 DA</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="checkout" class="section">
+        <div class="section-header">
+          <h2>Commande</h2>
+          <p>Remplissez vos coordonnées pour confirmer la livraison.</p>
+        </div>
+        <form id="checkout-form" class="form-card">
+          <div class="form-row">
+            <label>Nom<span class="required">*</span></label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-row">
+            <label>Prénom<span class="required">*</span></label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-row">
+            <label>Téléphone<span class="required">*</span></label>
+            <input type="tel" name="phone" placeholder="+213..." required />
+          </div>
+          <div class="form-row">
+            <label>Wilaya<span class="required">*</span></label>
+            <input type="text" name="wilaya" placeholder="Ex: Alger" required />
+          </div>
+          <div class="form-row">
+            <label>Mode de livraison<span class="required">*</span></label>
+            <select name="deliveryMode" required>
+              <option value="">Choisir...</option>
+              <option value="Domicile">À domicile</option>
+              <option value="Bureau">Au bureau</option>
+            </select>
+          </div>
+          <button type="submit" class="cta full-width">Valider la commande</button>
+          <div id="form-error" class="form-message error" hidden></div>
+          <div id="form-success" class="form-message success" hidden></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>BookZZ — Paiement cash à la réception.</div>
+      <div>Livraison rapide à domicile ou au bureau.</div>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>
